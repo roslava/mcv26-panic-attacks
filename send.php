@@ -51,7 +51,7 @@ $pass = $config['smtp_pass'] ?? '';
 $to   = $config['to'] ?? $user;
 $host = $config['smtp_host'] ?? 'smtp.yandex.ru';
 $port = (int)($config['smtp_port'] ?? 465);
-$subject = $config['subject'] ?? 'Заявка с сайта artrit-artroz.mcv26.ru';
+$subject = $config['subject'] ?? 'Заявка с лендинга «Панические атаки»';
 
 if ($user === '' || $pass === '' || strpos($pass, 'ВСТАВЬТЕ') !== false) {
     http_response_code(500);
@@ -64,7 +64,7 @@ $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 $when = date('d.m.Y H:i:s');
 
 $bodyText =
-    "Новая заявка с artrit-artroz.mcv26.ru\n\n" .
+    "Новая заявка с лендинга «Панические атаки»\n\n" .
     "Имя: {$name}\n" .
     "Телефон: {$phone}\n" .
     "Согласие на обработку ПДн: да\n\n" .
@@ -73,7 +73,7 @@ $bodyText =
     "IP: {$ip}\n" .
     "UA: {$ua}\n";
 
-$fromName = 'Сайт artrit-artroz.mcv26.ru';
+$fromName = 'Лендинг «Панические атаки»';
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $encodedFromName = '=?UTF-8?B?' . base64_encode($fromName) . '?=';
 
@@ -133,7 +133,7 @@ try {
         throw new RuntimeException('SMTP banner');
     }
 
-    $write('EHLO artrit-artroz.mcv26.ru');
+    $write('EHLO mcv26-panic');
     $ehlo = $read();
     if (!$expect($ehlo, '250')) {
         throw new RuntimeException('EHLO');
