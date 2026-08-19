@@ -1298,38 +1298,39 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      width: 120px;
-      min-height: 112px;
-      padding: 16px 12px;
+      gap: 8px;
+      width: 72px;
+      aspect-ratio: 9 / 12;
+      padding: 10px 6px;
       background: rgba(255, 255, 255, 0.72);
       border: 1px solid rgba(0, 78, 137, 0.1);
-      border-radius: 16px;
+      border-radius: 14px;
       box-shadow: 0 4px 16px rgba(0, 78, 137, 0.06);
       text-align: center;
+      box-sizing: border-box;
     }
     .mini-chain-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: rgba(0, 78, 137, 0.06);
+      width: auto;
+      height: auto;
+      border-radius: 0;
+      background: none;
       color: var(--color-ink);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 18px;
-      overflow: hidden;
+      overflow: visible;
     }
     .mini-chain-icon img {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       object-fit: contain;
       display: block;
     }
     .mini-chain-label {
-      font-size: 13px;
+      font-size: 10px;
       font-weight: 500;
-      line-height: 1.3;
+      line-height: 1.25;
       color: var(--color-ink);
       letter-spacing: 0.01em;
     }
@@ -1345,9 +1346,9 @@
         justify-content: center;
       }
       .mini-chain-card {
-        width: 110px;
-        min-height: 104px;
-        padding: 14px 10px;
+        width: 68px;
+        aspect-ratio: 9 / 12;
+        padding: 8px 4px;
       }
       .mini-chain-arrow { padding: 0 2px; }
     }
@@ -1367,7 +1368,7 @@
       }
       .mini-chain-item:nth-child(2) .mini-chain-arrow,
       .mini-chain-item:nth-child(4) .mini-chain-arrow { display: none; }
-      .mini-chain-card { width: 100%; }
+      .mini-chain-card { width: 100%; aspect-ratio: 9 / 12; }
     }
     .note-box {
       margin-top: 20px;
