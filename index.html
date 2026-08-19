@@ -285,6 +285,55 @@
       }
     }
     .btn-ember svg, .btn-ember i { width: 18px; height: 18px; flex-shrink: 0; font-size: 16px; }
+    .hero-phones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 32px;
+      margin-top: 28px;
+      align-items: flex-start;
+    }
+    .hero-phone {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(249, 245, 232, 0.9);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    .hero-phone:hover { color: #fff; }
+    .hero-phone-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(249, 245, 232, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      color: rgba(249, 245, 232, 0.85);
+    }
+    .hero-phone-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding-top: 2px;
+    }
+    .hero-phone-num {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.3;
+    }
+    .hero-phone-addr {
+      font-size: 13px;
+      line-height: 1.35;
+      color: rgba(249, 245, 232, 0.62);
+    }
+    .hero-phone:hover .hero-phone-addr { color: rgba(249, 245, 232, 0.8); }
+    @media (max-width: 640px) {
+      .hero-phones { flex-direction: column; gap: 16px; }
+    }
     .shimmer-text {
       display: block;
       background-image: linear-gradient(
@@ -1331,6 +1380,22 @@
             Записаться на&nbsp;консультацию
             <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
           </a>
+          <div class="hero-phones">
+            <a class="hero-phone" href="tel:+78652477366">
+              <span class="hero-phone-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              <span class="hero-phone-body">
+                <span class="hero-phone-num">+7 (8652) 477-366</span>
+                <span class="hero-phone-addr">ул.&nbsp;Тухачевского, 26/5</span>
+              </span>
+            </a>
+            <a class="hero-phone" href="tel:+78652447044">
+              <span class="hero-phone-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+              <span class="hero-phone-body">
+                <span class="hero-phone-num">+7 (8652) 44-70-44</span>
+                <span class="hero-phone-addr">ул.&nbsp;Чехова, 45а</span>
+              </span>
+            </a>
+          </div>
         </div>
         <div class="hero-visual" aria-hidden="true"></div>
       </div>
