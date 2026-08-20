@@ -562,11 +562,13 @@
       transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
     }
     .about-card,
-    .symptom-block,
     .method-card,
     .why-card {
-      /* обычная обводка; у diff/diag в покое не нужна — есть контраст с фоном */
+      /* обычная обводка; у symptom-block в покое обводки нет */
       box-shadow: inset 0 0 0 1px var(--color-border);
+    }
+    .symptom-block {
+      box-shadow: none;
     }
     .diff-card,
     .diag-card {
@@ -672,6 +674,23 @@
     .symptom-block {
       background: #fff;
       padding: 28px;
+    }
+    #when .symptom-block {
+      background: var(--color-ink);
+      color: #F9F5E8;
+    }
+    #when .symptom-block h3 {
+      color: #F9F5E8;
+    }
+    #when .symptom-block h3 i {
+      color: rgba(249, 245, 232, 0.9);
+      background: rgba(249, 245, 232, 0.12);
+    }
+    #when .symptom-list li {
+      color: rgba(249, 245, 232, 0.78);
+    }
+    #when .symptom-list li::before {
+      background: var(--color-ember);
     }
     .symptom-block h3 {
       font-size: 17px;
@@ -1551,7 +1570,7 @@
     </section>
 
     <!-- SYMPTOMS -->
-    <section id="symptoms" style="background: #fff;">
+    <section id="symptoms" style="background: linear-gradient(to right, #e9f2f7 0%, #d6e2ed 100%);">
       <div class="container">
         <div class="section-head">
           <div class="section-head-left">Как&nbsp;это ощущается</div>
@@ -1615,7 +1634,7 @@
     </section>
 
     <!-- WHEN HELP -->
-    <section id="when">
+    <section id="when" style="background: #f8f5ef;">
       <div class="container">
         <div class="section-head">
           <div class="section-head-left">Когда&nbsp;нужна&nbsp;помощь</div>
@@ -1623,7 +1642,7 @@
         </div>
         <div class="section-intro section-intro--ill-left">
           <div class="illustration-slot illustration-slot--round" id="ill-004">
-            <span class="illustration-slot-label">иллюстрация 003</span>
+            <img src="https://storage.yandexcloud.net/mcv26/Panic_004.webp" alt="Когда нужна помощь психолога" width="640" height="640" loading="lazy" />
           </div>
           <div class="section-intro-text">
             <h2 class="section-title">Не&nbsp;обязательно ждать, пока станет совсем тяжело</h2>
