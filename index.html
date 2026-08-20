@@ -1315,15 +1315,18 @@
       align-self: stretch;
       border-radius: var(--radius-card);
       border: none;
-      background: var(--color-surface-soft);
+      background: transparent;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .work-intro .work-illustration img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
+      position: static;
+      width: auto;
       height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      object-fit: contain;
       object-position: center;
       display: block;
     }
@@ -1342,12 +1345,17 @@
         grid-template-columns: 1fr;
       }
       .work-intro .work-illustration {
-        aspect-ratio: 16 / 10;
-        min-height: 220px;
-        max-height: 320px;
+        aspect-ratio: auto;
+        min-height: 0;
+        max-height: none;
+        height: auto;
       }
       .work-intro .work-illustration img {
-        position: absolute;
+        position: static;
+        width: 100%;
+        height: auto;
+        max-height: 320px;
+        object-fit: contain;
       }
       .work-cards {
         grid-template-columns: repeat(2, 1fr);
