@@ -1044,7 +1044,7 @@
       aspect-ratio: 3 / 4;
       border-radius: var(--radius-card);
       background: var(--color-surface-soft);
-      border: 1px solid var(--color-border);
+      border: none;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1235,11 +1235,34 @@
       color: var(--color-ember);
     }
     .footer {
-      background: var(--color-ink);
+      background: var(--color-hero-bg);
+      background-image: url('https://storage.yandexcloud.net/mcv26/panic_001.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: rgba(249, 245, 232, 0.7);
-      padding: 32px 0;
+      padding: 40px 0;
       text-align: center;
       font-size: 14px;
+      position: relative;
+      isolation: isolate;
+    }
+    .footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(0, 42, 74, 0.92) 0%,
+        rgba(0, 58, 102, 0.88) 50%,
+        rgba(0, 78, 137, 0.82) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+    .footer .container {
+      position: relative;
+      z-index: 1;
     }
     .footer-disclaimer {
       margin-bottom: 12px;
@@ -1275,6 +1298,49 @@
       height: 6px;
       border-radius: 50%;
       background: var(--color-ember);
+    }
+    .work-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+    .work-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    .work-cards .diag-card {
+      background: var(--color-surface-soft);
+    }
+    .work-illustration {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-card);
+      border: none;
+      background: var(--color-surface-soft);
+      overflow: hidden;
+    }
+    .work-illustration img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .work-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .work-illustration {
+        min-height: 320px;
+        aspect-ratio: 16 / 10;
+        max-height: 420px;
+      }
     }
     .diag-grid {
       display: grid;
@@ -1640,13 +1706,13 @@
           <div class="section-head-left">Когда&nbsp;нужна&nbsp;помощь</div>
           <span class="section-num">(03)</span>
         </div>
-        <div class="section-intro section-intro--ill-left">
-          <div class="illustration-slot illustration-slot--round" id="ill-004">
-            <img src="https://storage.yandexcloud.net/mcv26/Panic_004.webp" alt="Когда нужна помощь психолога" width="640" height="640" loading="lazy" />
-          </div>
+        <div class="section-intro">
           <div class="section-intro-text">
             <h2 class="section-title">Не&nbsp;обязательно ждать, пока станет совсем тяжело</h2>
             <p class="section-desc">Если приступы начинают влиять на&nbsp;привычную жизнь, имеет смысл обратиться за&nbsp;помощью раньше, а&nbsp;не&nbsp;когда избегание уже сильно ограничило повседневность.</p>
+          </div>
+          <div class="illustration-slot illustration-slot--round" id="ill-004">
+            <img src="https://storage.yandexcloud.net/mcv26/Panic_004.webp" alt="Когда нужна помощь психолога" width="640" height="640" loading="lazy" />
           </div>
         </div>
 
@@ -1703,22 +1769,27 @@
           </div>
         </div>
 
-        <div class="diag-grid">
-          <div class="diag-card">
-            <h3><i class="fa-solid fa-comments" aria-hidden="true"></i> Разбор механизмов</h3>
-            <p>Понимание, как ощущения, мысли и&nbsp;поведение связаны между собой и&nbsp;поддерживают круг тревоги.</p>
+        <div class="work-layout">
+          <div class="work-cards">
+            <div class="diag-card">
+              <h3><i class="fa-solid fa-comments" aria-hidden="true"></i> Разбор механизмов</h3>
+              <p>Понимание, как ощущения, мысли и&nbsp;поведение связаны между собой и&nbsp;поддерживают круг тревоги.</p>
+            </div>
+            <div class="diag-card">
+              <h3><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Работа со&nbsp;страхом ощущений</h3>
+              <p>Снижение страха перед телесными проявлениями тревоги — чтобы они переставали запускать панику.</p>
+            </div>
+            <div class="diag-card">
+              <h3><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Возвращение в&nbsp;жизнь</h3>
+              <p>Постепенное расширение того, что раньше избегалось из-за страха приступа.</p>
+            </div>
+            <div class="diag-card">
+              <h3><i class="fa-solid fa-brain" aria-hidden="true"></i> Техники саморегуляции</h3>
+              <p>Практические навыки, которые можно использовать в&nbsp;момент нарастания тревоги.</p>
+            </div>
           </div>
-          <div class="diag-card">
-            <h3><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> Работа со&nbsp;страхом ощущений</h3>
-            <p>Снижение страха перед телесными проявлениями тревоги — чтобы они переставали запускать панику.</p>
-          </div>
-          <div class="diag-card">
-            <h3><i class="fa-solid fa-person-walking" aria-hidden="true"></i> Возвращение в&nbsp;жизнь</h3>
-            <p>Постепенное расширение того, что раньше избегалось из-за страха приступа.</p>
-          </div>
-          <div class="diag-card">
-            <h3><i class="fa-solid fa-brain" aria-hidden="true"></i> Техники саморегуляции</h3>
-            <p>Практические навыки, которые можно использовать в&nbsp;момент нарастания тревоги.</p>
+          <div class="work-illustration illustration-slot" id="ill-work">
+            <img src="https://storage.yandexcloud.net/mcv26/Panic_005.png" alt="Как проходит работа с психологом" width="640" height="800" loading="lazy" />
           </div>
         </div>
 
