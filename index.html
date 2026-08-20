@@ -1377,8 +1377,8 @@
     }
     .work-cards .diag-card,
     .work-card {
-      background: var(--color-ink);
-      color: #F9F5E8;
+      background: var(--color-surface-soft);
+      color: var(--color-ink);
       min-width: 0;
       padding: 0;
       overflow: hidden;
@@ -1393,11 +1393,11 @@
       flex: 1;
     }
     .work-card-body h3 {
-      color: #F9F5E8;
+      color: var(--color-ink);
       margin-bottom: 0;
     }
     .work-card-body p {
-      color: rgba(249, 245, 232, 0.78);
+      color: var(--color-ink-soft);
       font-size: 14px;
       line-height: 1.45;
       margin: 0;
@@ -1407,8 +1407,7 @@
       width: 100%;
       aspect-ratio: 1;
       overflow: hidden;
-      background: rgba(0, 0, 0, 0.15);
-      /* полукруг сверху — зеркально к карточкам «Когда нужна помощь» */
+      background: rgba(0, 78, 137, 0.06);
       border-radius: 50% 50% 0 0;
       margin-top: auto;
     }
@@ -1418,25 +1417,6 @@
       object-fit: cover;
       object-position: center;
       display: block;
-    }
-    .work-card-img .when-story-num {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      z-index: 2;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: #111;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
     }
     @media (max-width: 900px) {
       .work-intro {
@@ -1841,7 +1821,6 @@
         <div class="symptoms-grid when-stories">
           <div class="symptom-block">
             <div class="when-story-img">
-              <span class="when-story-num">01</span>
               <img src="https://storage.yandexcloud.net/mcv26/story/story_01.jpg" alt="" width="400" height="400" loading="lazy" />
             </div>
             <div class="when-story-body">
@@ -1853,7 +1832,6 @@
           </div>
           <div class="symptom-block">
             <div class="when-story-img">
-              <span class="when-story-num">02</span>
               <img src="https://storage.yandexcloud.net/mcv26/story/story_02.jpg" alt="" width="400" height="400" loading="lazy" />
             </div>
             <div class="when-story-body">
@@ -1865,7 +1843,6 @@
           </div>
           <div class="symptom-block">
             <div class="when-story-img">
-              <span class="when-story-num">03</span>
               <img src="https://storage.yandexcloud.net/mcv26/story/story_03.jpg" alt="" width="400" height="400" loading="lazy" />
             </div>
             <div class="when-story-body">
@@ -1877,7 +1854,6 @@
           </div>
           <div class="symptom-block">
             <div class="when-story-img">
-              <span class="when-story-num">04</span>
               <img src="https://storage.yandexcloud.net/mcv26/story/story_04.jpg" alt="" width="400" height="400" loading="lazy" />
             </div>
             <div class="when-story-body">
