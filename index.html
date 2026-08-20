@@ -678,9 +678,33 @@
     #when .symptom-block {
       background: var(--color-ink);
       color: #F9F5E8;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    #when .when-story-img {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.15);
+    }
+    #when .when-story-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    #when .when-story-body {
+      padding: 20px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
     }
     #when .symptom-block h3 {
       color: #F9F5E8;
+      margin-bottom: 0;
     }
     #when .symptom-block h3 i {
       color: rgba(249, 245, 232, 0.9);
@@ -691,6 +715,24 @@
     }
     #when .symptom-list li::before {
       background: var(--color-ember);
+    }
+    #when .when-stories {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    @media (max-width: 1100px) {
+      #when .when-stories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 720px) {
+      #when .when-stories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      #when .when-stories {
+        grid-template-columns: 1fr;
+      }
     }
     .symptom-block h3 {
       font-size: 17px;
@@ -1717,36 +1759,61 @@
           </div>
         </div>
 
-        <div class="symptoms-grid">
+        <div class="symptoms-grid when-stories">
           <div class="symptom-block">
-            <h3><i class="fa-solid fa-bus" aria-hidden="true"></i> Избегание транспорта и&nbsp;людных мест</h3>
-            <ul class="symptom-list">
-              <li>Страх оказаться в&nbsp;ситуации, где «некуда деться»</li>
-            </ul>
+            <div class="when-story-img">
+              <img src="https://storage.yandexcloud.net/mcv26/story/story_01.jpg" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="when-story-body">
+              <h3><i class="fa-solid fa-bus" aria-hidden="true"></i> Избегание транспорта и&nbsp;людных мест</h3>
+              <ul class="symptom-list">
+                <li>Страх оказаться в&nbsp;ситуации, где «некуда деться»</li>
+              </ul>
+            </div>
           </div>
           <div class="symptom-block">
-            <h3><i class="fa-solid fa-house-user" aria-hidden="true"></i> Страх оставаться один</h3>
-            <ul class="symptom-list">
-              <li>Потребность, чтобы кто-то был рядом «на всякий случай»</li>
-            </ul>
+            <div class="when-story-img">
+              <img src="https://storage.yandexcloud.net/mcv26/story/story_02.jpg" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="when-story-body">
+              <h3><i class="fa-solid fa-house-user" aria-hidden="true"></i> Страх оставаться один</h3>
+              <ul class="symptom-list">
+                <li>Потребность, чтобы кто-то был рядом «на всякий случай»</li>
+              </ul>
+            </div>
           </div>
           <div class="symptom-block">
-            <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> Постоянное прислушивание к&nbsp;телу</h3>
-            <ul class="symptom-list">
-              <li>К&nbsp;сердцу, дыханию, ощущениям — в&nbsp;ожидании приступа</li>
-            </ul>
+            <div class="when-story-img">
+              <img src="https://storage.yandexcloud.net/mcv26/story/story_03.jpg" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="when-story-body">
+              <h3><i class="fa-solid fa-heart" aria-hidden="true"></i> Постоянное прислушивание к&nbsp;телу</h3>
+              <ul class="symptom-list">
+                <li>К&nbsp;сердцу, дыханию, ощущениям — в&nbsp;ожидании приступа</li>
+              </ul>
+            </div>
           </div>
           <div class="symptom-block">
-            <h3><i class="fa-solid fa-ban" aria-hidden="true"></i> Отказ от&nbsp;привычных дел</h3>
-            <ul class="symptom-list">
-              <li>Из-за страха, что в&nbsp;этот момент может начаться паника</li>
-            </ul>
+            <div class="when-story-img">
+              <img src="https://storage.yandexcloud.net/mcv26/story/story_04.jpg" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="when-story-body">
+              <h3><i class="fa-solid fa-ban" aria-hidden="true"></i> Отказ от&nbsp;привычных дел</h3>
+              <ul class="symptom-list">
+                <li>Из-за страха, что в&nbsp;этот момент может начаться паника</li>
+              </ul>
+            </div>
           </div>
           <div class="symptom-block">
-            <h3><i class="fa-solid fa-clock" aria-hidden="true"></i> Жизнь в&nbsp;ожидании приступа</h3>
-            <ul class="symptom-list">
-              <li>Тревога становится фоном, а&nbsp;не&nbsp;эпизодом</li>
-            </ul>
+            <div class="when-story-img">
+              <img src="https://storage.yandexcloud.net/mcv26/story/story_05.jpg" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="when-story-body">
+              <h3><i class="fa-solid fa-clock" aria-hidden="true"></i> Жизнь в&nbsp;ожидании приступа</h3>
+              <ul class="symptom-list">
+                <li>Тревога становится фоном, а&nbsp;не&nbsp;эпизодом</li>
+              </ul>
+            </div>
           </div>
         </div>
 
