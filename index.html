@@ -1504,7 +1504,8 @@
       box-sizing: border-box;
     }
     .mini-chain-icon {
-      width: auto;
+      width: 100%;
+      max-width: 100%;
       height: auto;
       border-radius: 0;
       background: none;
@@ -1514,12 +1515,13 @@
       justify-content: center;
       font-size: 18px;
       overflow: visible;
+      flex: 1 1 auto;
+      min-height: 0;
     }
     .mini-chain-icon img {
-      width: clamp(60px, 55%, 90px);
+      width: 100%;
       height: auto;
-      min-width: 60px;
-      max-width: 90px;
+      max-width: 100%;
       aspect-ratio: 1;
       object-fit: contain;
       display: block;
@@ -1545,9 +1547,9 @@
         padding: 10px 4px;
       }
       .mini-chain-icon img {
-        width: clamp(48px, 55%, 90px);
-        max-width: 90px;
-        min-width: 48px;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
       }
       .mini-chain-label {
         font-size: 10px;
@@ -1565,8 +1567,9 @@
         padding: 10px 6px;
       }
       .mini-chain-icon img {
-        width: clamp(60px, 50%, 90px);
-        min-width: 60px;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
       }
     }
     .note-box {
