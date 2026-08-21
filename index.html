@@ -1531,25 +1531,30 @@
       color: var(--color-ink);
       letter-spacing: 0.01em;
     }
-    /* Планшет и уже: 2 колонки, карточки на всю ширину; перенос только по две */
+    /* Планшет: все 4 карточки в одну строку на всю ширину */
     @media (max-width: 900px) {
       .mini-chain {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
         width: 100%;
         max-width: none;
       }
       .mini-chain-card {
         width: 100%;
         aspect-ratio: 9 / 12;
+        padding: 10px 4px;
       }
       .mini-chain-icon img {
-        width: clamp(70px, 40%, 90px);
+        width: clamp(48px, 55%, 90px);
         max-width: 90px;
-        min-width: 70px;
+        min-width: 48px;
+      }
+      .mini-chain-label {
+        font-size: 10px;
       }
     }
-    @media (max-width: 480px) {
+    /* Мобиле: перенос только по две */
+    @media (max-width: 560px) {
       .mini-chain {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -1558,6 +1563,10 @@
         width: 100%;
         aspect-ratio: 9 / 12;
         padding: 10px 6px;
+      }
+      .mini-chain-icon img {
+        width: clamp(60px, 50%, 90px);
+        min-width: 60px;
       }
     }
     .note-box {
