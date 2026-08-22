@@ -1447,6 +1447,38 @@
         grid-template-columns: 1fr;
       }
     }
+    .methods-grid {
+      margin-top: 8px;
+    }
+    .method-tech-card {
+      background: #fff;
+      padding: 24px;
+    }
+    .method-tech-card h3 {
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: var(--color-ink);
+    }
+    .method-tech-card p {
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--color-ink-soft);
+      margin: 0;
+    }
+    #methods .methods-start {
+      margin-top: 0;
+    }
+    @media (max-width: 900px) {
+      .methods-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 560px) {
+      .methods-grid {
+        grid-template-columns: 1fr;
+      }
+    }
     .diag-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1645,6 +1677,7 @@
         <li><a href="#symptoms" data-nav>Как&nbsp;ощущается</a></li>
         <li><a href="#when" data-nav>Когда&nbsp;нужна&nbsp;помощь</a></li>
         <li><a href="#work" data-nav>Как&nbsp;проходит&nbsp;работа</a></li>
+        <li><a href="#methods" data-nav>Методы</a></li>
         <li><a href="#doctor" data-nav>Специалист</a></li>
         <li><a href="#cta" data-nav>Запись</a></li>
       </ul>
@@ -1962,12 +1995,63 @@
       </div>
     </section>
 
+    <!-- METHODS -->
+    <section id="methods" style="background: var(--color-bone);">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head-left">Методы и&nbsp;технологии</div>
+          <span class="section-num">(05)</span>
+        </div>
+        <div class="section-intro">
+          <div class="section-intro-text">
+            <h2 class="section-title">Комплексный подход: психика и&nbsp;тело</h2>
+            <p class="section-desc">Паническая атака затрагивает и&nbsp;психику, и&nbsp;тело. В&nbsp;центре программа строится индивидуально: от&nbsp;диагностики и&nbsp;психологической работы до&nbsp;физиотерапии и&nbsp;телесных практик — по&nbsp;показаниям.</p>
+          </div>
+        </div>
+
+        <div class="methods-start note-box" style="margin-bottom: 32px;">
+          <strong>С&nbsp;чего начинается.</strong> Обычно путь начинается с&nbsp;консультации врача-невролога: дифференциальная диагностика, исключение органических и&nbsp;соматических причин, которые могут имитировать панические атаки. На&nbsp;этой основе формируется персональная программа.
+        </div>
+
+        <div class="diag-grid methods-grid">
+          <div class="diag-card method-tech-card">
+            <h3>Психолог и&nbsp;психотерапия</h3>
+            <p>Работа с&nbsp;механизмами тревоги, в&nbsp;том числе в&nbsp;формате когнитивно-поведенческого подхода: осознание установок, навыки саморегуляции в&nbsp;момент приступа.</p>
+          </div>
+          <div class="diag-card method-tech-card">
+            <h3>Фармакотерапия</h3>
+            <p>При&nbsp;необходимости психотерапию усиливают медикаментозной поддержкой — чтобы стабилизировать фон, снизить уровень тревожности и&nbsp;облегчить работу с&nbsp;состоянием.</p>
+          </div>
+          <div class="diag-card method-tech-card">
+            <h3>Физиотерапия и&nbsp;реабилитация</h3>
+            <p>Методы, направленные на&nbsp;регуляцию вегетативной нервной системы, которая часто «перегружается» во&nbsp;время панических атак.</p>
+          </div>
+          <div class="diag-card method-tech-card">
+            <h3>ТМС — магнитная стимуляция</h3>
+            <p>Неинвазивное воздействие магнитными импульсами на&nbsp;зоны коры, связанные с&nbsp;контролем эмоций и&nbsp;тревогой. Помогает нормализовать баланс возбуждения и&nbsp;торможения в&nbsp;ЦНС.</p>
+          </div>
+          <div class="diag-card method-tech-card">
+            <h3>Микрополяризация (ТКМП)</h3>
+            <p>Мягкое воздействие микротоками на&nbsp;корковые зоны: поддержка метаболизма нервной ткани и&nbsp;снижение общей возбудимости нервной системы.</p>
+          </div>
+          <div class="diag-card method-tech-card">
+            <h3>Телесная работа и&nbsp;массаж</h3>
+            <p>Специализированная проработка мышечных зажимов, шейно-воротниковой зоны и&nbsp;дыхательной мускулатуры — чтобы снять телесное напряжение, которое поддерживает круг тревоги.</p>
+          </div>
+        </div>
+
+        <div class="note-box">
+          Набор методов и&nbsp;длительность курса определяет специалист после очной консультации. Состав программы зависит от&nbsp;состояния и&nbsp;показаний — без универсальных «схем на&nbsp;всех».
+        </div>
+      </div>
+    </section>
+
     <!-- DOCTOR -->
     <section class="doctor-section" id="doctor">
       <div class="container">
         <div class="section-head">
           <div class="section-head-left">Специалист</div>
-          <span class="section-num">(05)</span>
+          <span class="section-num">(06)</span>
         </div>
         <div class="doctors-list">
           <article class="doctor-grid">
