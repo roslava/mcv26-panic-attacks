@@ -555,7 +555,8 @@
     .method-card,
     .why-card,
     .diff-card,
-    .diag-card {
+    .diag-card,
+    .method-tech-card {
       position: relative;
       border: none;
       border-radius: var(--radius-card);
@@ -579,7 +580,8 @@
     .method-card::before,
     .why-card::before,
     .diff-card::before,
-    .diag-card::before {
+    .diag-card::before,
+    .method-tech-card::before {
       content: '';
       position: absolute;
       inset: 0;
@@ -618,7 +620,8 @@
       .method-card:hover,
       .why-card:hover,
       .diff-card:hover,
-      .diag-card:hover {
+      .diag-card:hover,
+      .method-tech-card:hover {
         transform: translateY(-6px);
         box-shadow: none;
       }
@@ -627,7 +630,8 @@
       .method-card:hover::before,
       .why-card:hover::before,
       .diff-card:hover::before,
-      .diag-card:hover::before {
+      .diag-card:hover::before,
+      .method-tech-card:hover::before {
         opacity: 1;
         animation: card-beam-spin 3.2s linear infinite;
       }
