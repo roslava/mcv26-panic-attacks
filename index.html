@@ -1449,19 +1449,56 @@
     }
     .methods-grid {
       margin-top: 8px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
     .method-tech-card {
       background: #fff;
-      padding: 24px;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      min-height: 160px;
+      border-radius: var(--radius-card);
+    }
+    .method-tech-ill {
+      position: relative;
+      flex: 0 0 36%;
+      width: 36%;
+      align-self: stretch;
+      min-width: 0;
+      border-radius: 0 50% 50% 0;
+      overflow: hidden;
+      background: var(--color-surface-soft);
+    }
+    .method-tech-ill img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .method-tech-body {
+      flex: 1 1 auto;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      min-width: 0;
     }
     .method-tech-card h3 {
       font-size: 17px;
       font-weight: 500;
-      margin-bottom: 10px;
+      margin: 0;
       color: var(--color-ink);
     }
     .method-tech-card p {
-      font-size: 15px;
+      font-size: 14px;
       line-height: 1.5;
       color: var(--color-ink-soft);
       margin: 0;
@@ -1471,12 +1508,19 @@
     }
     @media (max-width: 900px) {
       .methods-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
     }
     @media (max-width: 560px) {
-      .methods-grid {
-        grid-template-columns: 1fr;
+      .method-tech-card {
+        flex-direction: column;
+        min-height: 0;
+      }
+      .method-tech-ill {
+        flex: none;
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 0 0 50% 50%;
       }
     }
     .diag-grid {
@@ -2013,31 +2057,61 @@
           <strong>С&nbsp;чего начинается.</strong> Обычно путь начинается с&nbsp;консультации врача-невролога: дифференциальная диагностика, исключение органических и&nbsp;соматических причин, которые могут имитировать панические атаки. На&nbsp;этой основе формируется персональная программа.
         </div>
 
-        <div class="diag-grid methods-grid">
-          <div class="diag-card method-tech-card">
-            <h3>Психолог и&nbsp;психотерапия</h3>
-            <p>Работа с&nbsp;механизмами тревоги, в&nbsp;том числе в&nbsp;формате когнитивно-поведенческого подхода: осознание установок, навыки саморегуляции в&nbsp;момент приступа.</p>
-          </div>
-          <div class="diag-card method-tech-card">
-            <h3>Фармакотерапия</h3>
-            <p>При&nbsp;необходимости психотерапию усиливают медикаментозной поддержкой — чтобы стабилизировать фон, снизить уровень тревожности и&nbsp;облегчить работу с&nbsp;состоянием.</p>
-          </div>
-          <div class="diag-card method-tech-card">
-            <h3>Физиотерапия и&nbsp;реабилитация</h3>
-            <p>Методы, направленные на&nbsp;регуляцию вегетативной нервной системы, которая часто «перегружается» во&nbsp;время панических атак.</p>
-          </div>
-          <div class="diag-card method-tech-card">
-            <h3>ТМС — магнитная стимуляция</h3>
-            <p>Неинвазивное воздействие магнитными импульсами на&nbsp;зоны коры, связанные с&nbsp;контролем эмоций и&nbsp;тревогой. Помогает нормализовать баланс возбуждения и&nbsp;торможения в&nbsp;ЦНС.</p>
-          </div>
-          <div class="diag-card method-tech-card">
-            <h3>Микрополяризация (ТКМП)</h3>
-            <p>Мягкое воздействие микротоками на&nbsp;корковые зоны: поддержка метаболизма нервной ткани и&nbsp;снижение общей возбудимости нервной системы.</p>
-          </div>
-          <div class="diag-card method-tech-card">
-            <h3>Телесная работа и&nbsp;массаж</h3>
-            <p>Специализированная проработка мышечных зажимов, шейно-воротниковой зоны и&nbsp;дыхательной мускулатуры — чтобы снять телесное напряжение, которое поддерживает круг тревоги.</p>
-          </div>
+        <div class="methods-grid">
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_00.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>Психолог и&nbsp;психотерапия</h3>
+              <p>Работа с&nbsp;механизмами тревоги, в&nbsp;том числе в&nbsp;формате когнитивно-поведенческого подхода: осознание установок, навыки саморегуляции в&nbsp;момент приступа.</p>
+            </div>
+          </article>
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_01.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>Фармакотерапия</h3>
+              <p>При&nbsp;необходимости психотерапию усиливают медикаментозной поддержкой — чтобы стабилизировать фон, снизить уровень тревожности и&nbsp;облегчить работу с&nbsp;состоянием.</p>
+            </div>
+          </article>
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_02.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>Физиотерапия и&nbsp;реабилитация</h3>
+              <p>Методы, направленные на&nbsp;регуляцию вегетативной нервной системы, которая часто «перегружается» во&nbsp;время панических атак.</p>
+            </div>
+          </article>
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_03.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>ТМС — магнитная стимуляция</h3>
+              <p>Неинвазивное воздействие магнитными импульсами на&nbsp;зоны коры, связанные с&nbsp;контролем эмоций и&nbsp;тревогой. Помогает нормализовать баланс возбуждения и&nbsp;торможения в&nbsp;ЦНС.</p>
+            </div>
+          </article>
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_04.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>Микрополяризация (ТКМП)</h3>
+              <p>Мягкое воздействие микротоками на&nbsp;корковые зоны: поддержка метаболизма нервной ткани и&nbsp;снижение общей возбудимости нервной системы.</p>
+            </div>
+          </article>
+          <article class="method-tech-card">
+            <div class="method-tech-ill">
+              <img src="https://storage.yandexcloud.net/mcv26/methods_05.webp" alt="" width="400" height="400" loading="lazy" />
+            </div>
+            <div class="method-tech-body">
+              <h3>Телесная работа и&nbsp;массаж</h3>
+              <p>Специализированная проработка мышечных зажимов, шейно-воротниковой зоны и&nbsp;дыхательной мускулатуры — чтобы снять телесное напряжение, которое поддерживает круг тревоги.</p>
+            </div>
+          </article>
         </div>
 
         <div class="note-box">
@@ -2062,7 +2136,7 @@
               <h2>Юрий Иванович Власов</h2>
               <p class="doctor-role">Психолог · основатель и&nbsp;директор Медицинского центра Власова · 39 лет практического опыта</p>
               <p class="doctor-text">
-                Юрий Иванович ведёт приём как психолог. В&nbsp;работе уделяет внимание тревожным состояниям, внутреннему напряжению, жизненным кризисам и&nbsp;обучению техникам саморегуляции. На&nbsp;этом лендинге — только о&nbsp;психологической помощи.
+                Юрий Иванович ведёт приём как психолог. В&nbsp;работе уделяет внимание тревожным состояниям, внутреннему напряжению, жизненным кризисам и&nbsp;обучению техникам саморегуляции.
               </p>
               <a href="#cta" class="btn-ember">
                 Записаться на&nbsp;консультацию
