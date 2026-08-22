@@ -51,7 +51,7 @@ $pass = $config['smtp_pass'] ?? '';
 $to   = $config['to'] ?? $user;
 $host = $config['smtp_host'] ?? 'smtp.yandex.ru';
 $port = (int)($config['smtp_port'] ?? 465);
-$subject = $config['subject'] ?? 'Заявка с лендинга «Панические атаки»';
+$subject = $config['subject'] ?? 'Заявка с panic-attacks.mcv26.ru (панические атаки)';
 
 if ($user === '' || $pass === '' || strpos($pass, 'ВСТАВЬТЕ') !== false) {
     http_response_code(500);
@@ -64,16 +64,18 @@ $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
 $when = date('d.m.Y H:i:s');
 
 $bodyText =
-    "Новая заявка с лендинга «Панические атаки»\n\n" .
+    "Новая заявка с лендинга «Панические атаки»\n" .
+    "Сайт: https://panic-attacks.mcv26.ru/\n\n" .
     "Имя: {$name}\n" .
     "Телефон: {$phone}\n" .
     "Согласие на обработку ПДн: да\n\n" .
     "———\n" .
+    "Источник: panic-attacks.mcv26.ru\n" .
     "Время: {$when}\n" .
     "IP: {$ip}\n" .
     "UA: {$ua}\n";
 
-$fromName = 'Лендинг «Панические атаки»';
+$fromName = 'panic-attacks.mcv26.ru';
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 $encodedFromName = '=?UTF-8?B?' . base64_encode($fromName) . '?=';
 

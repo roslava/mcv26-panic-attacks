@@ -6,16 +6,16 @@
  */
 return [
     // Ящик, от имени которого идёт отправка (SMTP-логин)
-    'smtp_user' => 'rostislav.nen@yandex.ru',
+    'smtp_user' => 'info@mcv26.ru',
 
     // Пароль приложения Яндекса (не основной пароль от почты!)
     'smtp_pass' => 'ВСТАВЬТЕ_ПАРОЛЬ_ПРИЛОЖЕНИЯ',
 
     // Куда приходят заявки
-    'to' => 'rostislav.nen@yandex.ru',
+    'to' => 'info@mcv26.ru',
 
-    // Тема по умолчанию
-    'subject' => 'Заявка с сайта artrit-artroz.mcv26.ru',
+    // Тема по умолчанию — должно быть видно, что заявка с этого лендинга
+    'subject' => 'Заявка с panic-attacks.mcv26.ru (панические атаки)',
 
     // SMTP Яндекса
     'smtp_host' => 'smtp.yandex.ru',
