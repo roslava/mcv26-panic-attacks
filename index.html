@@ -2285,10 +2285,13 @@
           status.className = 'form-status form-status--ok';
           status.textContent = 'Заявка отправлена. Мы свяжемся с вами в ближайшее время.';
         }
-      }).catch(function () {
+      }).catch(function (err) {
         if (status) {
           status.className = 'form-status form-status--error';
-          status.textContent = 'Не удалось отправить. Позвоните нам по телефону из блока контактов.';
+          var msg = (err && err.message) ? String(err.message) : '';
+          status.textContent = (msg && msg !== 'Ошибка отправки' && msg.indexOf('JSON') === -1)
+            ? msg
+            : 'Не удалось отправить. Позвоните нам по телефону из блока контактов.';
         }
       }).finally(function () {
         if (btn) {
