@@ -1,23 +1,17 @@
 <?php
-/**
- * Скопируйте этот файл на сервер как config.php
- * и заполните пароль приложения Яндекса.
- * config.php НЕ должен попадать в git и не должен быть доступен по HTTP.
- *
- * Важно: файл ОБЯЗАН начинаться с <?php
- *
- * На Timeweb предпочтительно:
- *   smtp_port => 587
- *   smtp_secure => 'tls'
- * Порт 465 (ssl) на shared-хостинге часто закрыт наружу.
- */
 return [
-    'smtp_user' => 'info@mcv26.ru',
-    'smtp_pass' => 'ВСТАВЬТЕ_ПАРОЛЬ_ПРИЛОЖЕНИЯ',
-    'to' => 'info@mcv26.ru',
-    'subject' => 'Заявка с panic-attacks.mcv26.ru (панические атаки)',
+    'smtp_user' => 'mcv26-feedback@yandex.ru',
+    'smtp_pass' => 'xxxx',
+    'to' => 'mcv26-feedback@yandex.ru',
+    'subject' => 'Заявка с xxxxxx.mcv26.ru',
     'smtp_host' => 'smtp.yandex.ru',
     'smtp_port' => 587,
-    'smtp_secure' => 'tls', // tls (587) или ssl (465)
-    // 'debug' => true, // раскомментируйте, чтобы видеть текст ошибки в ответе формы
+    'smtp_secure' => 'tls',
+    'debug' => true,
+    
+    // ===== ПАРАМЕТРЫ ДЛЯ ПИСЬМА =====
+    'site_name' => 'xxxxxx.mcv26.ru',          
+    'site_title' => 'Лечение xxxxx',          
+    'email_from' => 'mcv26-feedback@yandex.ru', 
+    'footer_text' => 'С заботой о вашем здоровье', 
 ];
