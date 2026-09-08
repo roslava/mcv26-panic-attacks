@@ -26,7 +26,7 @@
     "url": "https://panic-attacks.mcv26.ru/",
     "image": "https://storage.yandexcloud.net/mcv26/panic_001.webp",
     "description": "Лечение панических атак в Ставрополе: консультация медицинского психолога, диагностика причин тревожного состояния и индивидуальный подход в Медицинском центре Власова.",
-    "medicalSpecialty": ["Psychology", "Psychiatry"],
+    "medicalSpecialty": "Psychology",
     "telephone": ["+7-8652-44-70-44", "+7-8652-47-73-66"],
     "address": [
       {
@@ -52,7 +52,74 @@
       "@type": "Organization",
       "name": "Медицинский центр Власова",
       "url": "https://mcv26.ru/"
+    },
+    "employee": {
+      "@type": "Person",
+      "name": "Юрий Иванович Власов",
+      "description": "Медицинский психолог, основатель и директор Медицинского центра Власова.",
+      "url": "https://mcv26.ru/doctors/vlasov-yurij-ivanovich-stavropol/",
+      "worksFor": {
+        "@type": "MedicalClinic",
+        "name": "Медицинский центр Власова",
+        "url": "https://panic-attacks.mcv26.ru/"
+      }
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Что такое паническая атака?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Паническая атака — кратковременный эпизод интенсивной тревоги или страха, который может сопровождаться сердцебиением, нехваткой воздуха, головокружением, дрожью, ощущением потери контроля и другими телесными симптомами."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как понять, что это именно паническая атака?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Симптомы панической атаки могут быть похожи на проявления заболеваний сердца, дыхательной системы и других состояний. При первом приступе или необычных симптомах нужна медицинская оценка, а не самостоятельная диагностика."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "К какому специалисту обращаться при панических атаках?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "В Медицинском центре Власова работа может начинаться с консультации специалиста и исключения соматических или неврологических причин. С тревожными механизмами и страхом повторных приступов работает медицинский психолог."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Можно ли избавиться от панических атак?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Состояние поддаётся коррекции. Результат зависит от причин, выраженности симптомов и индивидуальной ситуации."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Как проходит лечение панических атак?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Работа проходит индивидуально. Она может включать психологическую работу с механизмами тревоги и избеганием, обучение саморегуляции, а при наличии показаний — другие методы и медицинскую поддержку."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Когда при симптомах панической атаки нужно обратиться к врачу срочно?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Если приступ возник впервые, симптомы необычные или выраженные, есть сильная боль в груди, потеря сознания, выраженная одышка или другие симптомы, которые могут указывать не только на тревогу, необходимо обратиться за медицинской помощью."
+        }
+      }
+    ]
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1217,6 +1284,55 @@
       text-underline-offset: 4px;
     }
     .doctor-details-link:hover { color: #1f74ab; }
+    .faq-section {
+      background: var(--color-surface-soft);
+    }
+    .faq-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+    .faq-item {
+      background: #fff;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 24px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-question {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .faq-item summary::after {
+      content: '+';
+      flex: 0 0 auto;
+      color: var(--color-ember);
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+    .faq-item p {
+      padding: 0 24px 24px;
+      color: var(--color-ink-soft);
+      font-size: 15px;
+      line-height: 1.55;
+    }
     .cta {
       background: var(--color-hero-bg);
       background-image: url('https://storage.yandexcloud.net/mcv26/panic_001.webp');
@@ -1754,6 +1870,7 @@
         order: -1;
       }
       .doctor-grid { gap: 28px; }
+      .faq-list { grid-template-columns: 1fr; }
       .doctor-photo-slot { max-width: 280px; margin: 0 auto; }
       section { padding: var(--space-64) 0; }
       .nav-links { display: none; }
@@ -2215,6 +2332,43 @@
               </a>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-head-left">Вопросы и ответы</div>
+          <span class="section-num">(07)</span>
+        </div>
+        <h2 class="section-title" id="faq-title">Частые вопросы о панических атаках</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary><span class="faq-question">Что такое паническая атака?</span></summary>
+            <p>Паническая атака — кратковременный эпизод интенсивной тревоги или страха, который может сопровождаться сердцебиением, нехваткой воздуха, головокружением, дрожью, ощущением потери контроля и другими телесными симптомами.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span class="faq-question">Как понять, что это именно паническая атака?</span></summary>
+            <p>Симптомы панической атаки могут быть похожи на проявления заболеваний сердца, дыхательной системы и других состояний. При первом приступе или необычных симптомах нужна медицинская оценка, а не самостоятельная диагностика.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span class="faq-question">К какому специалисту обращаться при панических атаках?</span></summary>
+            <p>В Медицинском центре Власова работа может начинаться с консультации специалиста и исключения соматических или неврологических причин. С тревожными механизмами и страхом повторных приступов работает медицинский психолог.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span class="faq-question">Можно ли избавиться от панических атак?</span></summary>
+            <p>Состояние поддаётся коррекции. Результат зависит от причин, выраженности симптомов и индивидуальной ситуации.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span class="faq-question">Как проходит лечение панических атак?</span></summary>
+            <p>Работа проходит индивидуально. Она может включать психологическую работу с механизмами тревоги и избеганием, обучение саморегуляции, а при наличии показаний — другие методы и медицинскую поддержку.</p>
+          </details>
+          <details class="faq-item">
+            <summary><span class="faq-question">Когда при симптомах панической атаки нужно обратиться к врачу срочно?</span></summary>
+            <p>Если приступ возник впервые, симптомы необычные или выраженные, есть сильная боль в груди, потеря сознания, выраженная одышка или другие симптомы, которые могут указывать не только на тревогу, необходимо обратиться за медицинской помощью.</p>
+          </details>
         </div>
       </div>
     </section>
